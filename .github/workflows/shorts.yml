@@ -38,7 +38,7 @@ jobs:
       - name: Build video
         run: python scripts/make_video.py
       - name: Upload output files
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4
         with:
-          name: shorts-output
-          path: output/
+         name: shorts-output
+         path: output/
