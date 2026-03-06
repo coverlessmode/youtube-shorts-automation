@@ -1,0 +1,39 @@
+name: Shorts Automation
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install ffmpeg
+        run: sudo apt-get install ffmpeg
+
+      - name: Generate topic
+        run: python scripts/generate_topics.py
+
+      - name: Generate script
+        run: python scripts/generate_script.py
+
+      - name: Download background
+        run: python scripts/download_video.py
+
+      - name: Create subtitles
+        run: python scripts/create_subtitles.py
+
+      - name: Build video
+        run: python scripts/make_video.py
