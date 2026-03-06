@@ -40,5 +40,5 @@ jobs:
       - name: Upload output files
         uses: actions/upload-artifact@v3
         with:
-        name: shorts-output
-        path: output/
+          name: shorts-output
+          path: output/
