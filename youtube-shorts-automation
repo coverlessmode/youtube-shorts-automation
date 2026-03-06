@@ -1,0 +1,15 @@
+.github/workflows/shorts.yml
+
+scripts/generate_topics.py
+scripts/generate_script.py
+scripts/generate_voice.py
+scripts/download_video.py
+scripts/create_subtitles.py
+scripts/make_video.py
+scripts/upload_youtube.py
+
+assets/backgrounds/
+
+output/
+
+requirements.txt
